@@ -17,12 +17,6 @@ services:
       - ./data/static/:/data/static/
     networks:
       - backend
-  maputnik:
-    image: maputnik/editor
-    ports:
-      - "8888:8888"
-    networks:
-      - backend
 
 networks:
   backend:
