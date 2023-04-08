@@ -2,6 +2,7 @@ version: '3'
 services:
   frontend:
     image: nginx:latest
+    restart: always
     volumes:
       - ./config/nginx/:/etc/nginx/conf.d/
       - cache:/data/nginx/cache
@@ -12,6 +13,7 @@ services:
 
   versatiles:
     image: versatiles/versatiles:latest-scratch
+    restart: always
     volumes:
       - ./data/tiles/:/data/tiles/
       - ./data/static/:/data/static/
@@ -21,6 +23,7 @@ services:
 
   maputnik:
     image: maputnik/editor
+    restart: always
     ports:
       - "8888:8888"
     networks:
