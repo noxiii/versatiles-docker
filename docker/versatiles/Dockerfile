@@ -23,7 +23,7 @@ RUN adduser \
 
 FROM scratch
 WORKDIR /data/
-
+ENV RUST_BACKTRACE=1
 # Copy files from builder
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
